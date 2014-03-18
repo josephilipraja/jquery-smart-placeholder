@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <meta name="description" content="A jQuery Plugin which handles HTML Input placeholder attributes smartly. Shows placeholder even when user is typing.">
+    <meta name="author" content="Jose Philip Raja, CreaveLabs IT Solutions">
+    <!-- <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'> -->
+    <link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
@@ -14,70 +18,130 @@
     <![endif]-->
 
     <title>jQuery Smart Placeholder by josephilipraja</title>
-  </head>
+</head>
 
-  <body>
+<body>
+<div id="fb-root"></div>
+    <script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=189349771108007";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
     <header>
-      <div class="inner">
-        <h1>jQuery Smart Placeholder</h1>
-        <h2>A jQuery Plugin which handles HTML Input placeholder attributes smartly. Shows placeholder even when user is typing.</h2>
-        <a href="https://github.com/josephilipraja/jquery-smart-placeholder" class="button"><small>View project on</small>GitHub</a>
-      </div>
+        <div class="inner">
+            <h1>jQuery
+                <br>SmartPlaceholder.js</h1>
+            <h2>A jQuery Plugin which handles HTML Input placeholder attributes smartly. Shows placeholder even when user is typing.</h2>
+            <a href="https://github.com/josephilipraja/jquery-smart-placeholder" class="button">
+                <small>View project on</small>GitHub</a>
+
+        </div>
     </header>
 
     <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+        <div class="inner clearfix">
+            <section id="main-content">
+                <h3>
+                    <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages">
+                        <span class="octicon octicon-link"></span>
+                    </a>Welcome to SmartPlaceholder.js</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+                <p>SmartPlaceholder is a free &amp; open-source jQuery plugin which converts your normal html input tags into advanced user-friendly elements. This plugin works with zero modification to the markup, we know its already messed up! :P</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+                <p>We are in the era of placeholder attributes, we don't use labels to represent each input tag elements like we used to. But there are some limitations with the placeholder, major one is that it hides itself when the user starts typing. That's where SmartPlaceholder.js can take act in.</p>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+                <br><br>
+                <h3>
+                    <a name="demo" class="anchor" href="#demo">
+                        <span class="octicon octicon-link"></span>
+                    </a>Demo</h3>
+                <blockquote>Click to see it in action!
+                    <br><a href="http://josephilipraja.github.io/jquery-smart-placeholder/demo/" target="_blank">jQuery Smart HTML Input Placeholder Plugin Demo</a>
+                </blockquote>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+                <br><br>
+                <h3>
+                    <a name="usage" class="anchor" href="#usage">
+                        <span class="octicon octicon-link"></span>
+                    </a>Usage</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+                <pre><code>HTML:
+    &lt;input type="text" placeholder="Username"&gt;
+    &lt;input type="password" placeholder="Password"&gt;</code></pre>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+                <pre><code>JavaScript:
+    &lt;script src="jquery.js"&gt;&lt;/script&gt;
+    &lt;script src="jquery.smartPlaceholder.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript"&gt;
+        $(function() {
+            $("input").smartPlaceholder();
+        });
+    &lt;/script&gt;</code></pre>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+                <br><br>
+                <h3>
+                    <a name="docs" class="anchor" href="#docs">
+                        <span class="octicon octicon-link"></span>
+                    </a>Configurations / Options</h3>
+                <pre><code>// Default Settings &amp; Options
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+$("input").smartPlaceholder({
+    text: 'Enter Value',      // default text
+    backgroundColor: '#fff',  // hex, rgb, rgba
+    color: '#888',            // hex, rgb, rgba
+    size: 12,                 // in pixels
+    speed: 0.3,               // in secs
+    radius: 3,                // in pixels
+    indent: 5,                // in pixels
+    position: 'bottom',       // 'top' or 'bottom'
+    mode: 'extend'            // 'inline' or 'extend'
+});</code></pre>
+                
+                <br><br>
+                <h3>
+                    <a name="bugs" class="anchor" href="#bugs">
+                        <span class="octicon octicon-link"></span>
+                    </a>Bugs / Issues?</h3>
+                <p>Found a bug in SmartPlaceholder.js? Nice! Do notify me via <a href="https://github.com/josephilipraja/jquery-smart-placeholder/issues">Github Issues</a> or drop a mail at <a href="mailto:mail@josephilipraja.com">mail@josephilipraja.com</a>. I really appreciate it.</p>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+                <br><br>
+                <h3>
+                    <a name="support" class="anchor" href="#support">
+                        <span class="octicon octicon-link"></span>
+                    </a>Having Trouble?</h3>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+                <p>Having trouble with SmartPlaceholder.js? Check out the demo usage at <a href="http://josephilipraja.github.io/jquery-smart-placeholder/demo/">jQuery Smart Placeholder Plugin Demo</a> or contact <a href="mailto:mail@josephilipraja.com">mail@josephilipraja.com</a> and we’ll help you sort it out.</p>
+            </section>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-        </section>
+            <aside id="sidebar">
 
-        <aside id="sidebar">
-          <a href="https://github.com/josephilipraja/jquery-smart-placeholder/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/josephilipraja/jquery-smart-placeholder/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
+                <a href="http://josephilipraja.github.io/jquery-smart-placeholder/demo/" class="button">
+                    <small>HTML</small>
+                    Demo Page
+                </a>
+                <a href="https://github.com/josephilipraja/jquery-smart-placeholder/zipball/master" class="button">
+                    <small>Download</small>
+                    .zip file
+                </a>
+                <a href="https://github.com/josephilipraja/jquery-smart-placeholder/tarball/master" class="button">
+                    <small>Download</small>
+                    .tar.gz file
+                </a>
 
-          <p class="repo-owner"><a href="https://github.com/josephilipraja/jquery-smart-placeholder"></a> is maintained by <a href="https://github.com/josephilipraja">josephilipraja</a>.</p>
+                <p class="repo-owner">
+                    <a href="https://github.com/josephilipraja/jquery-smart-placeholder"></a>Developed by <a href="https://github.com/josephilipraja">Jose Philip Raja</a>.</p>
 
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
+                <div class="fb-like" data-href="https://www.facebook.com/pages/Jose-Philip-Raja/141687001907" data-layout="button" data-action="like" data-show-faces="true" data-share="false"></div>
+
+            </aside>
+        </div>
     </div>
 
-  
-  </body>
+</body>
+
 </html>
