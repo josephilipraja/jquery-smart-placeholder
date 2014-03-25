@@ -29,7 +29,7 @@
         // SmartPlaceholder Setup
         this.each(function() {
             // Filtering
-            if ($(this).is('input:not(input[type=hidden],input[type=file],input[type=disabled],input[type=checkbox],input[type=radio]),textarea')) {
+            if ($(this).is('input:not(input[type=hidden],input[type=file],input[type=disabled],input[type=checkbox],input[type=radio],input[type=submit],input[type=button],input[type=reset]),textarea')) {
 
                 // Variables
                 var t = settings.text;
